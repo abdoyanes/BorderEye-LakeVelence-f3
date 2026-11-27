@@ -27,7 +27,7 @@ setnames(tr, c("Time","X","Y","Z","Roll","Pitch","Heading",
 wrap180 <- function(a) ((a + 180) %% 360) - 180
 
 # GPS seconds-of-week -> clock time (date taken from file name, GPS-UTC = 18 s)
-flight_date <- as.Date("2026-10-15")
+flight_date <- as.Date("2026-08-27")
 week_start  <- flight_date - as.integer(format(flight_date, "%w"))  # Sunday
 t0_utc <- as.POSIXct(paste(week_start, "00:00:00"), tz = "UTC") + tr$Time[1] - 18
 t1_utc <- t0_utc + diff(range(tr$Time))
